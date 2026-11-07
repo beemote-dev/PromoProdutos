@@ -64,8 +64,8 @@ func fetchPrice(p Product)(*float64,string,error){
  for _,tag:=range metaRE.FindAllString(body,-1){
   attrs:=map[string]string{}
   for _,a:=range attrsRE.FindAllStringSubmatch(tag,-1){value:=a[2];if value==""{value=a[3]};attrs[strings.ToLower(a[1])]=html.UnescapeString(value)}
-  key:=strings.ToLower(attrs["property"]);if key==""{key=strings.ToLower(attrs["itemprop"]]}
-  if key==""{key=strings.ToLower(attrs["name"]]}
+  key:=strings.ToLower(attrs["property"]);if key==""{key=strings.ToLower(attrs["itemprop"])}
+  if key==""{key=strings.ToLower(attrs["name"])}
   if key=="product:price:amount" || key=="product:sale_price:amount" || key=="price"{
    value:=attrs["content"]
    if v,ok:=parsePrice(value);ok{return &v,"meta_price",nil}
