@@ -2,22 +2,50 @@
   {
     "id": "philco-pct40a",
     "at": "2026-11-07",
-    "price": null,
-    "status": "unavailable",
-    "error": "página retornou HTTP 403 (possível bloqueio ou indisponibilidade)"
+    "price": 1029.99,
+    "status": "ok",
+    "source": "magalu_next_data_pix",
+    "currency": "BRL",
+    "payment_method": "pix",
+    "seller": "techshop",
+    "diagnostic": {
+      "checked_at": "2026-11-07T15:15:55Z",
+      "method": "go_net_http",
+      "code": "ok",
+      "http_status": 200,
+      "final_url": "https://www.magazineluiza.com.br/fogao-cooktop-inducao-philco-pct40a-preto-4-bocas-220v-vidro-ceramico-touch-9-niveis/p/ed32c3cbdk/ed/ck4b/?seller_id=techshop",
+      "bytes": 823777,
+      "title": "Fogão Cooktop Indução Philco PCT40A Preto 4 Bocas 220V Vidro Cerâmico Touch 9 Níveis - Cooktop 4 Bocas - Magazine Luiza"
+    }
   },
   {
     "id": "dako-supreme",
     "at": "2026-11-07",
     "price": null,
     "status": "unavailable",
-    "error": "HTTP 200, mas não encontrei preço confiável em JSON-LD ou metadados (40620 bytes); página pode exigir JavaScript ou bloquear robôs"
+    "error": "access_denied: HTTP 403; página não utilizável para coleta",
+    "diagnostic": {
+      "checked_at": "2026-11-07T15:15:57Z",
+      "method": "go_net_http",
+      "code": "access_denied",
+      "http_status": 403,
+      "final_url": "https://www.mercadolivre.com.br/cooktop-dako-supreme-de-inducao-4-bocas-preto-para-embutir/p/MLB63741571",
+      "bytes": 2585
+    }
   },
   {
     "id": "midea-built",
     "at": "2026-11-07",
     "price": null,
     "status": "unavailable",
-    "error": "HTTP 200, mas não encontrei preço confiável em JSON-LD ou metadados (1569761 bytes); página pode exigir JavaScript ou bloquear robôs"
+    "error": "remote_error: HTTP 503; página não utilizável para coleta",
+    "diagnostic": {
+      "checked_at": "2026-11-07T15:15:57Z",
+      "method": "go_net_http",
+      "code": "remote_error",
+      "http_status": 503,
+      "final_url": "https://www.amazon.com.br/dp/B0DWT88S1T",
+      "bytes": 322
+    }
   }
 ]
