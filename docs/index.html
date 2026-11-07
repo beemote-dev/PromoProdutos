@@ -10,7 +10,7 @@ Promise.all([fetch('./products.json').then(r=>r.json()),fetch('./history.json').
  const title=document.createElement('h2');title.textContent=p.name;card.append(title);
  const store=document.createElement('p');store.className='muted';store.textContent=p.store;card.append(store);
  const price=document.createElement('div');price.className='price';price.textContent=latest?.price!=null?brl(latest.price):'Preço indisponível';card.append(price);
- const info=document.createElement('p');info.className='muted';info.textContent='Última verificação: '+(latest?.at||'ainda não realizada')+(latest?.price==null&&last?' · Último preço conhecido: '+brl(last.price):'');card.append(info);
+ const info=document.createElement('p');info.className='muted';info.textContent='Última verificação: '+(latest?.at||'ainda não realizada')+(latest?.price==null&&last?' · Último preço conhecido: '+brl(last.price):'');card.append(info);if(latest?.status==='unavailable'){const diag=document.createElement('p');diag.className='muted';diag.textContent='Coleta indisponível: '+(latest.error||'loja não forneceu preço');card.append(diag);}
  const min=document.createElement('p');min.textContent=valid.length?'Menor preço registrado: '+brl(Math.min(...valid.map(x=>x.price))):'Sem histórico de preços';card.append(min);
  const a=document.createElement('a');a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Abrir na loja';card.append(a);
  const box=document.createElement('div');box.className='chart';const canvas=document.createElement('canvas');box.append(canvas);card.append(box);root.append(card);
