@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "philco-pct40a",
+    "at": "2026-11-07",
+    "price": null,
+    "status": "unavailable"
+  },
+  {
+    "id": "dako-supreme",
+    "at": "2026-11-07",
+    "price": null,
+    "status": "unavailable"
+  },
+  {
+    "id": "midea-built",
+    "at": "2026-11-07",
+    "price": null,
+    "status": "unavailable"
+  }
+]
