@@ -21,6 +21,7 @@ type Record struct { ID string `json:"id"`; At string `json:"at"`; Price *float6
 var scriptRE=regexp.MustCompile(`(?is)<script\b[^>]*type\s*=\s*["']application/ld\+json["'][^>]*>(.*?)</script>`)
 var metaRE=regexp.MustCompile(`(?is)<meta\b[^>]*>`)
 var attrsRE=regexp.MustCompile(`(?is)([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')`)
+var amazonPriceRE=regexp.MustCompile(`(?is)<span[^>]*class=["'][^"']*a-offscreen[^"']*["'][^>]*>\s*R\$\s*([0-9.,]+)\s*</span>`)
 var client=&http.Client{Timeout:30*time.Second}
 func main(){
  raw,err:=os.ReadFile("config/products.json");if err!=nil{log.Fatal(err)}
@@ -54,6 +55,9 @@ func fetchPrice(p Product)(*float64,string,error){
  if res.StatusCode!=200{return nil,"",fmt.Errorf("página retornou HTTP %d (possível bloqueio ou indisponibilidade)",res.StatusCode)}
  b,e:=io.ReadAll(io.LimitReader(res.Body,6<<20));if e!=nil{return nil,"",e}
  body:=string(b)
+ if p.Store=="Amazon" {
+  if v,ok:=findAmazonPrice(body);ok{return &v,"amazon_price_block",nil}
+ }
  for _,m:=range scriptRE.FindAllStringSubmatch(body,-1){
   var obj any
   if json.Unmarshal([]byte(html.UnescapeString(m[1])),&obj)==nil{
@@ -72,6 +76,20 @@ func fetchPrice(p Product)(*float64,string,error){
   }
  }
  return nil,"",fmt.Errorf("HTTP 200, mas não encontrei preço confiável em JSON-LD ou metadados (%d bytes); página pode exigir JavaScript ou bloquear robôs",len(b))
+}
+func findAmazonPrice(body string)(float64,bool){
+ // Restrito ao bloco de preço principal; evita preços de itens patrocinados.
+ for _,marker:=range []string{`id="corePriceDisplay_desktop_feature_div"`,`id="corePrice_feature_div"`,`id="apex_desktop"`} {
+  at:=strings.Index(body,marker)
+  if at<0{continue}
+  end:=at+12000;if end>len(body){end=len(body)}
+  section:=body[at:end]
+  if strings.Contains(strings.ToLower(section),"captcha"){continue}
+  for _,m:=range amazonPriceRE.FindAllStringSubmatch(section,-1){
+   if v,ok:=parsePrice(m[1]);ok{return v,true}
+  }
+ }
+ return 0,false
 }
 func fetchML(id string)(float64,error){
  token:=os.Getenv("MERCADOLIVRE_ACCESS_TOKEN")
