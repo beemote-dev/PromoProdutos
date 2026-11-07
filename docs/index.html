@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PromoProdutos</title><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+<style>body{font-family:system-ui;background:#0b1220;color:#e5e7eb;margin:0}main{max-width:1100px;margin:auto;padding:28px}h1{color:#86efac}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.card{background:#172238;border:1px solid #334155;border-radius:16px;padding:20px}.muted{color:#94a3b8}.price{font-size:1.8rem;font-weight:700;color:#86efac}a{color:#93c5fd}.chart{height:180px}canvas{max-height:180px}</style></head>
+<body><main><h1>PromoProdutos</h1><p class="muted">Monitoramento diário de cooktops de indução. Preços sujeitos a variação.</p><div id="cards" class="cards">Carregando...</div></main><script>
+const brl=v=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(v);
+Promise.all([fetch('./products.json').then(r=>r.json()),fetch('./history.json').then(r=>r.json())]).then(([products,history])=>{
+ const root=document.querySelector('#cards');root.replaceChildren();
+ for(const p of products){const rows=history.filter(x=>x.id===p.id).sort((a,b)=>a.at.localeCompare(b.at));const valid=rows.filter(x=>x.price!==null);const latest=rows.at(-1);const last=valid.at(-1);const card=document.createElement('section');card.className='card';
+ const title=document.createElement('h2');title.textContent=p.name;card.append(title);
+ const store=document.createElement('p');store.className='muted';store.textContent=p.store;card.append(store);
+ const price=document.createElement('div');price.className='price';price.textContent=latest?.price!=null?brl(latest.price):'Preço indisponível';card.append(price);
+ const info=document.createElement('p');info.className='muted';info.textContent='Última verificação: '+(latest?.at||'ainda não realizada')+(latest?.price==null&&last?' · Último preço conhecido: '+brl(last.price):'');card.append(info);
+ const min=document.createElement('p');min.textContent=valid.length?'Menor preço registrado: '+brl(Math.min(...valid.map(x=>x.price))):'Sem histórico de preços';card.append(min);
+ const a=document.createElement('a');a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Abrir na loja';card.append(a);
+ const box=document.createElement('div');box.className='chart';const canvas=document.createElement('canvas');box.append(canvas);card.append(box);root.append(card);
+ if(window.Chart&&valid.length)new Chart(canvas,{type:'line',data:{labels:valid.map(x=>x.at),datasets:[{label:'Preço (R$)',data:valid.map(x=>x.price),borderColor:'#86efac',tension:.2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}});
+ }
+}).catch(e=>{document.querySelector('#cards').textContent='Não foi possível carregar os dados: '+e.message});
+</script></body></html>
