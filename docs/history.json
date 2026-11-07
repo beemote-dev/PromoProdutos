@@ -3,18 +3,21 @@
     "id": "philco-pct40a",
     "at": "2026-11-07",
     "price": null,
-    "status": "unavailable"
+    "status": "unavailable",
+    "error": "página retornou HTTP 403 (possível bloqueio ou indisponibilidade)"
   },
   {
     "id": "dako-supreme",
     "at": "2026-11-07",
     "price": null,
-    "status": "unavailable"
+    "status": "unavailable",
+    "error": "HTTP 200, mas não encontrei preço confiável em JSON-LD ou metadados (40620 bytes); página pode exigir JavaScript ou bloquear robôs"
   },
   {
     "id": "midea-built",
     "at": "2026-11-07",
     "price": null,
-    "status": "unavailable"
+    "status": "unavailable",
+    "error": "HTTP 200, mas não encontrei preço confiável em JSON-LD ou metadados (1569761 bytes); página pode exigir JavaScript ou bloquear robôs"
   }
 ]
