@@ -1,7 +1,6 @@
 name: Monitor diário
 on:
-  schedule:
-    - cron: '17 12 * * *'
+  # A execução diária foi migrada para o Codex Cloud. Veja docs/cloud-schedule.md.
   workflow_dispatch:
 permissions:
   contents: write
