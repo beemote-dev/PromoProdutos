@@ -19,6 +19,8 @@ jobs:
         with:
           go-version-file: go.mod
           cache: false
+      - name: Validar compilação Go
+        run: go test ./...
       - name: Verificar preços
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
