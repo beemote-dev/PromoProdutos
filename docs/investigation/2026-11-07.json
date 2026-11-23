@@ -1,0 +1,167 @@
+[
+  {
+    "at": "2026-11-07T15:10:57.293481383Z",
+    "bytes": 2585,
+    "final_url": "https://www.mercadolivre.com.br/cooktop-dako-supreme-de-inducao-4-bocas-preto-para-embutir/p/MLB63741571",
+    "headers": {
+      "Content-Type": [
+        "text/html"
+      ],
+      "Rps": [
+        "w403"
+      ],
+      "Server": [
+        "envoy"
+      ]
+    },
+    "id": "dako-supreme",
+    "method": "go_net_http",
+    "requested_url": "https://www.mercadolivre.com.br/cooktop-dako-supreme-de-inducao-4-bocas-preto-para-embutir/p/MLB63741571",
+    "status": 403,
+    "sha256": "8bef02b55f4137dfadb3df0cdf5961411fbf157323d7909fbd81423b1cdd1504"
+  },
+  {
+    "at": "2026-11-07T15:10:57.978547913Z",
+    "bytes": 322,
+    "final_url": "https://www.amazon.com.br/dp/B0DWT88S1T",
+    "headers": {
+      "Content-Type": [
+        "text/html"
+      ],
+      "Server": [
+        "envoy"
+      ],
+      "X-Cache": [
+        "Error from cloudfront"
+      ]
+    },
+    "id": "midea-built",
+    "method": "go_net_http",
+    "requested_url": "https://www.amazon.com.br/dp/B0DWT88S1T",
+    "status": 503,
+    "sha256": "e82dde5d2a478ccc47ddadaf70463068e6b7d7989df1851778ce66e7a4f9b24a"
+  },
+  {
+    "at": "2026-11-07T15:10:59.137372268Z",
+    "bytes": 2585,
+    "final_url": "https://api.mercadolibre.com/items/MLB4480279587/prices",
+    "headers": {
+      "Content-Type": [
+        "text/html"
+      ],
+      "Rps": [
+        "w403"
+      ],
+      "Server": [
+        "envoy"
+      ],
+      "X-Cache": [
+        "Error from cloudfront"
+      ]
+    },
+    "id": "ml-hardcoded",
+    "method": "go_net_http",
+    "requested_url": "https://api.mercadolibre.com/items/MLB4480279587/prices",
+    "status": 403,
+    "sha256": "8bef02b55f4137dfadb3df0cdf5961411fbf157323d7909fbd81423b1cdd1504"
+  },
+  {
+    "at": "2026-11-07T15:10:58.929065935Z",
+    "bytes": 2585,
+    "final_url": "https://api.mercadolibre.com/products/MLB63741571/items",
+    "headers": {
+      "Content-Type": [
+        "text/html"
+      ],
+      "Rps": [
+        "w403"
+      ],
+      "Server": [
+        "envoy"
+      ],
+      "X-Cache": [
+        "Error from cloudfront"
+      ]
+    },
+    "id": "ml-items",
+    "method": "go_net_http",
+    "requested_url": "https://api.mercadolibre.com/products/MLB63741571/items",
+    "status": 403,
+    "sha256": "8bef02b55f4137dfadb3df0cdf5961411fbf157323d7909fbd81423b1cdd1504"
+  },
+  {
+    "at": "2026-11-07T15:10:58.662921813Z",
+    "bytes": 2585,
+    "final_url": "https://api.mercadolibre.com/products/MLB63741571",
+    "headers": {
+      "Content-Type": [
+        "text/html"
+      ],
+      "Rps": [
+        "w403"
+      ],
+      "Server": [
+        "envoy"
+      ],
+      "X-Cache": [
+        "Error from cloudfront"
+      ]
+    },
+    "id": "ml-product",
+    "method": "go_net_http",
+    "requested_url": "https://api.mercadolibre.com/products/MLB63741571",
+    "status": 403,
+    "sha256": "8bef02b55f4137dfadb3df0cdf5961411fbf157323d7909fbd81423b1cdd1504"
+  },
+  {
+    "at": "2026-11-07T15:10:55.756517931Z",
+    "bytes": 823427,
+    "final_url": "https://www.magazineluiza.com.br/fogao-cooktop-inducao-philco-pct40a-preto-4-bocas-220v-vidro-ceramico-touch-9-niveis/p/ed32c3cbdk/ed/ck4b/?seller_id=techshop",
+    "headers": {
+      "Content-Type": [
+        "text/html; charset=utf-8"
+      ],
+      "Server": [
+        "envoy"
+      ]
+    },
+    "id": "philco-pct40a",
+    "method": "go_net_http",
+    "requested_url": "https://www.magazineluiza.com.br/fogao-cooktop-inducao-philco-pct40a-preto-4-bocas-220v-vidro-ceramico-touch-9-niveis/p/ed32c3cbdk/ed/ck4b/?seller_id=techshop",
+    "status": 200,
+    "sha256": "fd703e83d8f5281dac0d5134f1554e069c785ced4d264aa7f7caba30239b5dd4"
+  },
+  {
+    "id": "dako-supreme",
+    "at": "2026-11-07T15:11:53.567344+00:00",
+    "requested_url": "https://www.mercadolivre.com.br/cooktop-dako-supreme-de-inducao-4-bocas-preto-para-embutir/p/MLB63741571",
+    "method": "playwright",
+    "status": 403,
+    "final_url": "https://www.mercadolivre.com.br/cooktop-dako-supreme-de-inducao-4-bocas-preto-para-embutir/p/MLB63741571",
+    "title": "",
+    "text_excerpt": "Mercado Libre - Donde comprar y vender de todo \nHubo un error accediendo a esta pagina...\nIr a la página principal",
+    "html_sha256": "29c93f46f2b4ca5ff595520fb93686dd3f8005e2cc774f819b2238ea701a0f7f"
+  },
+  {
+    "id": "midea-built",
+    "at": "2026-11-07T15:11:59.653692+00:00",
+    "requested_url": "https://www.amazon.com.br/dp/B0DWT88S1T",
+    "method": "playwright",
+    "status": 503,
+    "final_url": "https://www.amazon.com.br/error/500",
+    "title": "500 - Amazon.com.br",
+    "text_excerpt": "Lamentamos o inconveniente. Não oferecemos suporte à sua sessão ou cliente. Tente novamente com um navegador diferente e atualizado ou com o aplicativo móvel Amazon Shopping.",
+    "html_sha256": "d8819eac633f98714c6a5102d300db55201a86d10f20cdfb777cb416007e9b58"
+  },
+  {
+    "id": "philco-pct40a",
+    "at": "2026-11-07T15:11:44.948349+00:00",
+    "requested_url": "https://www.magazineluiza.com.br/fogao-cooktop-inducao-philco-pct40a-preto-4-bocas-220v-vidro-ceramico-touch-9-niveis/p/ed32c3cbdk/ed/ck4b/?seller_id=techshop",
+    "method": "playwright",
+    "status": 200,
+    "final_url": "https://www.magazineluiza.com.br/fogao-cooktop-inducao-philco-pct40a-preto-4-bocas-220v-vidro-ceramico-touch-9-niveis/p/ed32c3cbdk/ed/ck4b/?seller_id=techshop",
+    "title": "Fogão Cooktop Indução Philco PCT40A Preto 4 Bocas 220V Vidro Cerâmico Touch 9 Níveis - Cooktop 4 Bocas - Magazine Luiza",
+    "text_excerpt": "Pular para o conteudo principal\nDigite seu CEP\nBuscar no Magalu\nBuscar\n0\nBoas vindas :)\nEntre ou Cadastre-se\n\nTem no magalu\n\nCelulares\nEletrodomésticos\nTV e Vídeo\nInformática\nMóveis\nSaldão\nAtendimento\n+6\nFavoritar\nFull\n4.7 (52)\nFogão Cooktop Indução Philco PCT40A Preto 4 Bocas 220V Vidro Cerâmico Touch 9 Níveis\nVoltagem:\n220V\n\nVendido por Melhor para você e entregue por Magalu\n\nOferta termina em 48:47:09\n\nR$ 1.287,49\n\n20% OFF\n\nPreço R$ 1.029,99\nR$ 1.029,99\n\nno Pix\nOu R$ 1.287,49 em 10x de R$ 128,75 sem juros\nou R$ 1.287,49 em 10x de R$ 128,75 sem juros\n\nVer opções de pagamento\n\nCalcular frete e prazo\nAdicionar à sacola\nComprar agora\nInformações da loja\nMelhor para você\n\nLoja oficial no Magalu\n\nFale com lojista\nSeguir\nRuim\nÓtimo\n\n+1 milhão\n\nProdutos vendidos\n\nEntrega\n\nNo prazo\n\nAtendimento\n\nResponde rápido\n\nVer mais sobre a loja\nEntrega Full é entrega rápida, frete barato e mais segurança para você.\nMagalu garante a sua compra, do pedido à entrega.\nDevolução Gratuita em até 7 dias depois de receber o produto.\nDenunciar Anúncio\n",
+    "html_sha256": "f09be1f50e2fd93c7bc6654d4dc27ea644827db7c7e757194765031618414ce4"
+  }
+]
